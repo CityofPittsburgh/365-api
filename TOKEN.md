@@ -6,6 +6,9 @@ A refresh token is used to generate an access token.  An access token is require
 
 To complete this process, you must be set up as a Sharepoint administrator in 365.
 
+Last refresh: 4/29/2019
+**Next refresh needed by 9/29/2019**
+
 ## Step 1: Register the app
 Navigate [here](https://cityofpittsburgh.sharepoint.com/_layouts/15/appregnew.aspx ), and register a new third party application in the Sharepoint tenant.
 
