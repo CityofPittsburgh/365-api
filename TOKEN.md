@@ -115,4 +115,8 @@ SP_SECRET=<New client secret>
 SP_TOKEN=<New refresh token>
 ```
 
+This can be done via AZ Monitor. Click [this link](https://azmonitor.azurewebsites.us/Configure) and update the values within the JSON blocks for `365proxy` and `365proxy-staging`. 
+
+You can also accomplish this via the Azure console. From the main menu, click `365proxy` or `365proxy-staging`, then click `Configuration` under the `Settings` sidebar. From there, you'll see a list of editable environment variables for the application. 
+
 Update the values locally as well.
