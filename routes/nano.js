@@ -50,7 +50,7 @@ router.get("/allAnimals", async (req, res) => {
           name: animal.animalName,
           type: animal.animalType,
           coords: formatLatLng(coords),
-          reasonForVisit: incident
+          reasonForVisit: incident.reasonForVisit
         };
         newAnimals.push(newAnimal);
       }
