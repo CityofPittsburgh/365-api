@@ -86,7 +86,7 @@ This token is good for 6 months.
 To generate a new access token, construct the following POST call, with all supplied values properly encoded and passed as body parameters:
 
 POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tokens/OAuth/2
->grant_type=refresh_token
+>grant_type=refresh_token  
 >&client_id={ Encoded client Id from step 1 }@{ Encoded tenant realm from step 2 }  
 >&client_secret={ Encoded client secret from step 1 }  
 >&refresh_token={ Refresh token from step 4 }  
@@ -110,9 +110,9 @@ The access token expires quickly.
 For both the production service and the staging service, update all application settings with the new values for the following environment variables:
 
 ```
-SP_ID=<Encoded client ID from step 1>
-SP_SECRET=<Encoded client secret from step 1>
-SP_TOKEN=<New refresh token from step 4>
+SP_ID={ Encoded client Id from step 1 }@{ Encoded tenant realm from step 2 } 
+SP_SECRET={ Encoded client secret from step 1 }
+SP_TOKEN={ New refresh token from step 4 }
 ```
 
 Update the values locally as well.
