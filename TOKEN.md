@@ -4,6 +4,9 @@ A refresh token is used to generate an access token.  An access token is require
 
 **A new refresh token must be generated every six months.**
 
+Last refresh: 7/25/2019  
+**Next refresh needed by 1/25/2019**
+
 To complete this process, you must be set up as a Sharepoint administrator in 365.
 
 ## Step 1: Register the app
@@ -55,14 +58,15 @@ https://localhost/?code={ auth code }
 This authorization code expires in 5 minutes.  So, save it for further steps, and start moving faster...
 
 ## Step 4: Generate the refresh token
-To generate the refresh token, construct the following POST call, with all supplied values properly encoded and passed as query parameters:
+To generate the refresh token, construct the following POST call, with all supplied values properly encoded and passed as body parameters:
 
-POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tokens/OAuth/2?
+POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tokens/OAuth/2
+
 >grant_type=authorization_code   
->&client_id={ Client Id from step 1 }@{ Tenant realm  from step 2 }  
->&client_secret={ Client secret from step 1 }  
+>&client_id={ Encoded client Id from step 1 }@{ Encoded tenant realm from step 2 }  
+>&client_secret={ Encoded client secret from step 1 }  
 >&code={ Authorization code from step 3 }  
->&redirect_uri={ Redirect URI from step 1 }   
+>&redirect_uri={ Encoded redirect URI from step 1 }   
 >&resource=00000003-0000-0ff1-ce00-000000000000/cityofpittsburgh.sharepoint.com@{ Tenant realm from step 2 }
 
 Fire off the POST request, and inspect the response body for the refresh token:
@@ -79,15 +83,15 @@ Fire off the POST request, and inspect the response body for the refresh token:
 This token is good for 6 months.
 
 ## Step 5: Generate an access token
-To generate a new access token, construct the following POST call, with all supplied values properly encoded and passed as query parameters:
+To generate a new access token, construct the following POST call, with all supplied values properly encoded and passed as body parameters:
 
-POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tokens/OAuth/2?
+POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tokens/OAuth/2
 >grant_type=refresh_token
->&client_id={ Client Id from step 1 }@{ Tenant realm  from step 2 }  
->&client_secret={ Client secret from step 1 }  
+>&client_id={ Encoded client Id from step 1 }@{ Encoded tenant realm from step 2 }  
+>&client_secret={ Encoded client secret from step 1 }  
 >&refresh_token={ Refresh token from step 4 }  
->&redirect_uri={ Redirect URI from step 1 }   
->&resource=00000003-0000-0ff1-ce00-000000000000/cityofpittsburgh.sharepoint.com@{ Tenant realm from step 2 }
+>&redirect_uri={ Encoded redirect URI from step 1 }   
+>&resource=00000003-0000-0ff1-ce00-000000000000/cityofpittsburgh.sharepoint.com@{ Encoded tenant realm from step 2 }
 
 Fire off the POST request, and inspect the response body for the access token:
 
@@ -106,9 +110,9 @@ The access token expires quickly.
 For both the production service and the staging service, update all application settings with the new values for the following environment variables:
 
 ```
-SP_ID=<New client ID>
-SP_SECRET=<New client secret>
-SP_TOKEN=<New refresh token>
+SP_ID=<Encoded client ID from step 1>
+SP_SECRET=<Encoded client secret from step 1>
+SP_TOKEN=<New refresh token from step 4>
 ```
 
 Update the values locally as well.

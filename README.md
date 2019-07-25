@@ -12,8 +12,8 @@ Communication with the Sharepoint API is facilitated through an OAuth flow.  An 
 
 **If the refresh token expires, the proxy service will stop working.  And lots of things will break.**
 
-Last refresh: 4/29/2019  
-**Next refresh needed by 9/29/2019**
+Last refresh: 7/25/2019  
+**Next refresh needed by 1/25/2019**
 
 For a step-by-step guide to regenerating the refresh token, see [TOKEN.md](TOKEN.md)
 
