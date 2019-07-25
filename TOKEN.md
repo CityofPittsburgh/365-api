@@ -5,7 +5,7 @@ A refresh token is used to generate an access token.  An access token is require
 **A new refresh token must be generated every six months.**
 
 Last refresh: 7/25/2019  
-**Next refresh needed by 1/25/2019**
+**Next refresh needed by 1/25/2020**
 
 To complete this process, you must be set up as a Sharepoint administrator in 365.
 
