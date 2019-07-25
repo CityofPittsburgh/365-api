@@ -49,7 +49,8 @@ router.get("/allAnimals", async (req, res) => {
         const newAnimal = {
           name: animal.animalName,
           type: animal.animalType,
-          coords: formatLatLng(coords)
+          coords: formatLatLng(coords),
+          reasonForVisit: incident.reasonForVisit
         };
         newAnimals.push(newAnimal);
       }
