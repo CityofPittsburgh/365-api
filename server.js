@@ -48,7 +48,6 @@ app.use("/pghsupply", require("./routes/pghSupply"));
 app.use("/pghcerts", require("./routes/pghCerts"));
 app.use("/calendar", require("./routes/calendarEvents"));
 app.use("/confiscatedGuns", require("./routes/confiscatedGuns"));
-app.use("/gbgb", require("./routes/gb"));
 app.use("/nano", require("./routes/nano"));
 
 // Production error handler
