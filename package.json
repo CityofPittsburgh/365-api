@@ -15,7 +15,8 @@
     "node-fetch": "^2.2.1",
     "node-json-transform": "^1.0.17",
     "passport": "^0.2.2",
-    "swagger-ui-express": "^4.0.2"
+    "swagger-ui-express": "^4.0.2",
+    "lodash": ">=4.17.13"
   },
   "engines": {
     "node": "8.11.1"
