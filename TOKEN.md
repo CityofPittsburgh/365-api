@@ -7,7 +7,7 @@ A refresh token is used to generate an access token.  An access token is require
 Last refresh: 8/15/2019  
 **Next refresh needed by 2/5/2020 (ten-day buffer to be safe)**
 
-To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx).
+To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx)).
 
 ## Step 1: Register the app
 Navigate [here](https://cityofpittsburgh.sharepoint.com/_layouts/15/appregnew.aspx ), and register a new third party application in the Sharepoint tenant.
