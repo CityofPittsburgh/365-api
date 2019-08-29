@@ -118,4 +118,4 @@ SP_SECRET={ Encoded client secret from step 1 }
 SP_TOKEN={ New refresh token from step 4 }
 ```
 
-Update the values locally as well. Lastly, update this README with the new refresh dates.
+Update the values locally as well. You'll also need to udpate the config for [the pgh-works app](https://github.com/CityofPittsburgh/pgh-works), which communicates with SharePoint independently of 365-proxy. Lastly, update this README with the new refresh dates.
