@@ -4,8 +4,8 @@ A refresh token is used to generate an access token.  An access token is require
 
 **A new refresh token must be generated every six months.**
 
-Last refresh: 8/15/2019  
-**Next refresh needed by 2/5/2020 (ten-day buffer to be safe)**
+Last refresh: 1/3/2020  
+**Next refresh needed by 6/24/2020 (ten-day buffer to be safe)**
 
 To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx)).
 
@@ -83,33 +83,7 @@ Fire off the POST request, and inspect the response body for the refresh token:
 
 This token is good for 6 months.
 
-## Step 5: Generate an access token
-To generate a new access token, construct the following POST call, with all supplied values properly encoded and passed as body parameters:
-
-POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tokens/OAuth/2
->grant_type=refresh_token  
->&client_id={ Encoded client Id from step 1 }@{ Encoded tenant realm from step 2 }  
->&client_secret={ Encoded client secret from step 1 }  
->&refresh_token={ Refresh token from step 4 }  
->&redirect_uri={ Encoded redirect URI from step 1 }   
->&resource=00000003-0000-0ff1-ce00-000000000000/cityofpittsburgh.sharepoint.com@{ Encoded tenant realm from step 2 }
-
-Fire off the POST request, and inspect the response body for the access token:
-
-```
-{
-    "token_type": "Bearer",
-    ...
-    "access_token": { BINGO }
-    ...
-}
-```
-
-The access token expires quickly.
-
-*JO'T comment 8/15/19: it's not clear to me why this step is necessary, but doesn't hurt I guess.*
-
-## Step 6: Update environment variables on server, and in dev
+## Step 5: Update environment variables on server, and in dev
 For both the production service and the staging service, update all application settings with the new values for the following environment variables:
 
 ```
@@ -117,5 +91,6 @@ SP_ID={ Encoded client Id from step 1 }%40{ Encoded tenant realm from step 2 }
 SP_SECRET={ Encoded client secret from step 1 }
 SP_TOKEN={ New refresh token from step 4 }
 ```
+**Be sure to encode the SP_ID and SP_SECRET values correctly or the apps will not work.** To do so, pass them into [this tool](https://www.urlencoder.org/), click "ENCODE", and use the string that appears in the box below. 
 
 Update the values locally as well. Lastly, update this README with the new refresh dates.
