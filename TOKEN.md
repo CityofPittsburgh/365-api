@@ -93,4 +93,4 @@ SP_TOKEN={ New refresh token from step 4 }
 ```
 **Be sure to encode the SP_ID and SP_SECRET values correctly or the apps will not work.** To do so, pass them into [this tool](https://www.urlencoder.org/), click "ENCODE", and use the string that appears in the box below. 
 
-Update the values locally as well. Lastly, update this README with the new refresh dates.
+Update the values locally as well. Lastly, update this README with the new refresh dates, and update the Outlook calendar invite to recur.
