@@ -26,7 +26,7 @@ Click "Create," and save this information for further steps.
 Fire up an API client, and make a GET call to retrieve the realm ID of the 365 Sharepoint tenant. This can be accomplished via `curl` as follows:
 
 `
-curl -H "Authorization: Bearer" https://cityofpittsburgh.sharepoint.com/_vti_bin/client.svc 
+curl -H "Authorization: Bearer" https://cityofpittsburgh.sharepoint.com/_vti_bin/client.svc -i 
 `
 We recommend using [Postman](getpostman.com) throughout this process, however.
 
