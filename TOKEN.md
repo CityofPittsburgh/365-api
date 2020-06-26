@@ -4,8 +4,8 @@ A refresh token is used to generate an access token.  An access token is require
 
 **A new refresh token must be generated every six months.**
 
-Last refresh: 1/3/2020  
-**Next refresh needed by 6/24/2020 (ten-day buffer to be safe)**
+Last refresh: 6/26/2020  
+**Next refresh needed by 12/16/2020 (ten-day buffer to be safe)**
 
 To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx)).
 
@@ -64,10 +64,10 @@ To generate the refresh token, construct the following POST call, with all suppl
 POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tokens/OAuth/2
 
 >grant_type=authorization_code   
->&client_id={ Encoded client Id from step 1 }@{ Encoded tenant realm from step 2 }  
->&client_secret={ Encoded client secret from step 1 }  
+>&client_id={ client Id from step 1 }@{ tenant realm from step 2 }  
+>&client_secret={ client secret from step 1 }  
 >&code={ Authorization code from step 3 }  
->&redirect_uri={ Encoded redirect URI from step 1 }   
+>&redirect_uri=https://localhost/
 >&resource=00000003-0000-0ff1-ce00-000000000000/cityofpittsburgh.sharepoint.com@{ Tenant realm from step 2 }
 
 Fire off the POST request, and inspect the response body for the refresh token:
