@@ -1,13 +1,15 @@
 # Refresh token
 
-A refresh token is used to generate an access token.  An access token is required with every call to Sharepoint endpoints within the 365 REST API.  
+A refresh token is used to generate an access token.  An access token is required with every call to Sharepoint endpoints within the 365 REST API. This is required in order for the various applications that store data in Azure (e.g. [ACCMobile](https://accmobile.azurewebsites.us/), [PGH Supply](https://pghsupply.azurewebsites.us/), and [Maintenance Requests](https://maintenancerequest.azurewebsites.us/login)) to function properly.
 
 **A new refresh token must be generated every six months.**
 
 Last refresh: 6/26/2020  
 **Next refresh needed by 12/16/2020 (ten-day buffer to be safe)**
 
-To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx)).
+To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx)). Consult Paul Scherrer or the service desk if you need to become a Sharepoint admin.
+
+Before beginning the process, read through all the steps below. We recommend using the [Postman](https://www.postman.com/) desktop application for constructing the required API calls. You'll be most efficient if, prior to starting, you open up three tabs in Postman and construct the API calls required in steps 2, 3, and 4. To start, leave blank the param values you'll generate over the course of the process, then fill them in once you've got them and you're ready to fire off a request.
 
 ## Step 1: Register the app
 Navigate [here](https://cityofpittsburgh.sharepoint.com/_layouts/15/appregnew.aspx ), and register a new third party application in the Sharepoint tenant.
@@ -84,7 +86,10 @@ Fire off the POST request, and inspect the response body for the refresh token:
 This token is good for 6 months.
 
 ## Step 5: Update environment variables on server, and in dev
-For both the production service and the staging service, update all application settings with the new values for the following environment variables:
+
+Navigate to [AZ Monitor](https://azmonitor.azurewebsites.us/) (our interface for managing configuration of the Azure applications) and click "Configure" from the dropdown menu. From there, click the "Application" dropdown. 
+
+For both the production service (365proxy) and the staging service (365proxy-staging), update all application settings with the new values for the following environment variables:
 
 ```
 SP_ID={ Encoded client Id from step 1 }%40{ Encoded tenant realm from step 2 } 
@@ -93,4 +98,4 @@ SP_TOKEN={ New refresh token from step 4 }
 ```
 **Be sure to encode the SP_ID and SP_SECRET values correctly or the apps will not work.** To do so, pass them into [this tool](https://www.urlencoder.org/), click "ENCODE", and use the string that appears in the box below. 
 
-Update the values locally as well. Lastly, update this README with the new refresh dates, and update the Outlook calendar invite to recur.
+Update the values in your local version of the 365proxy repo well. Lastly, update this README with the new refresh dates, and make sure that the Outlook calendar invite is set to recur in six months for the ip
