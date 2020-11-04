@@ -1,6 +1,6 @@
 # Refresh token
 
-A refresh token is used to generate an access token.  An access token is required with every call to Sharepoint endpoints within the 365 REST API. This is required in order for the various applications that store data in Azure (e.g. [ACCMobile](https://accmobile.azurewebsites.us/), [PGH Supply](https://pghsupply.azurewebsites.us/), and [Maintenance Requests](https://maintenancerequest.azurewebsites.us/login)) to function properly.
+A refresh token is used to generate an access token.  An access token is required with every call to Sharepoint endpoints within the 365 REST API. This is required in order for the various JavaScript applications that store data in Azure (e.g. [ACCMobile](https://accmobile.azurewebsites.us/), [PGH Supply](https://pghsupply.azurewebsites.us/), and [Maintenance Requests](https://maintenancerequest.azurewebsites.us/login)) to function properly. The full list of those sites can be found [here](https://portal.azure.us/#@pittazuregov.onmicrosoft.com/resource/subscriptions/07fefdba-84eb-4d6b-b398-ab8737a57f95/resourceGroups/client-applications/overview). 
 
 **A new refresh token must be generated every six months.**
 
@@ -98,4 +98,6 @@ SP_TOKEN={ New refresh token from step 4 }
 ```
 **Be sure to encode the SP_ID and SP_SECRET values correctly or the apps will not work.** To do so, pass them into [this tool](https://www.urlencoder.org/), click "ENCODE", and use the string that appears in the box below. 
 
-Update the values in your local version of the 365proxy repo well. Lastly, update this README with the new refresh dates, and make sure that the Outlook calendar invite is set to recur in six months for the ip
+Update the values in your local version of the 365proxy repo well. Lastly, update this README with the new refresh dates, and make sure that the Outlook calendar invite is set to recur in six months for ip.analytics@pittsburghpa.gov and IP-Applications@pittsburghpa.gov.
+
+Consult the service desk if you don't have a login for the cop.city.pittsburgh.pa.us Azure account, where the configurations for these applications are stored; such a login is not necessary for the process described here, but it's nice to have for reference.
