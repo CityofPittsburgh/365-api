@@ -4,8 +4,10 @@ A refresh token is used to generate an access token.  An access token is require
 
 **A new refresh token must be generated every six months.**
 
-Last refresh: 6/26/2020  
-**Next refresh needed by 12/16/2020 (ten-day buffer to be safe)**
+Last refresh: 11/10/2020  
+**Next refresh needed by 5/01/2020 (ten-day buffer to be safe)**
+
+If you're doing this for the first time, we recommend watching the video demo here: https://cityofpittsburgh.sharepoint.com/:f:/s/IandP/EjyKqHwaouFPjjrlJYwSJokBSMWjNKMKRpGhoiBJp4c1uQ?e=tUcOJb
 
 To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx)). Consult Paul Scherrer or the service desk if you need to become a Sharepoint admin.
 
@@ -97,6 +99,8 @@ SP_SECRET={ Encoded client secret from step 1 }
 SP_TOKEN={ New refresh token from step 4 }
 ```
 **Be sure to encode the SP_ID and SP_SECRET values correctly or the apps will not work.** To do so, pass them into [this tool](https://www.urlencoder.org/), click "ENCODE", and use the string that appears in the box below. 
+
+After you've saved the new environment variables, click the "Deploy" button on the top nav and deploy both 365proxy and 365proxy-staging. Wait a few minutes, then verify that the applications are still working correctly, for example by loading [ACCMobile](https://accmobile.azurewebsites.us/).
 
 Update the values in your local version of the 365proxy repo well. Lastly, update this README with the new refresh dates, and make sure that the Outlook calendar invite is set to recur in six months for ip.analytics@pittsburghpa.gov and IP-Applications@pittsburghpa.gov.
 
