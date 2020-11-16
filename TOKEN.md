@@ -5,7 +5,7 @@ A refresh token is used to generate an access token.  An access token is require
 **A new refresh token must be generated every six months.**
 
 Last refresh: 11/10/2020  
-**Next refresh needed by 5/01/2020 (ten-day buffer to be safe)**
+**Next refresh needed by 5/01/2021 (ten-day buffer to be safe)**
 
 If you're doing this for the first time, we recommend watching the video demo here: https://cityofpittsburgh.sharepoint.com/:f:/s/IandP/EjyKqHwaouFPjjrlJYwSJokBSMWjNKMKRpGhoiBJp4c1uQ?e=tUcOJb
 
