@@ -20,7 +20,7 @@ Navigate [here](https://cityofpittsburgh.sharepoint.com/_layouts/15/appregnew.as
 | ----------- | ----------- |
 | Client Id      | { Click "Generate" } |
 | Client Secret   | { Click "Generate" } |
-| Title   | 365 Proxy { add short UUID here } |
+| Title   | 365-Proxy-{ add short UUID here } (e.g. 365-Proxy-11-17-2020) |
 | App Domain   | www.azurewebsites.us |
 | Redirect URI   | https://localhost/ |
 
