@@ -71,7 +71,7 @@ POST https://accounts.accesscontrol.windows.net/{ Tenant realm from step 2 }/tok
 >client_id={ client Id from step 1 }@{ tenant realm from step 2 }  
 >client_secret={ client secret from step 1 }  
 >code={ Authorization code from step 3 }  
->redirect_uri=https://localhost/
+>redirect_uri=https://localhost/ \
 >resource=00000003-0000-0ff1-ce00-000000000000/cityofpittsburgh.sharepoint.com@{ Tenant realm from step 2 }
 
 Fire off the POST request, and inspect the response body for the refresh token:
