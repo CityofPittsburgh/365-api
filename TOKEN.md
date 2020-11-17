@@ -44,7 +44,9 @@ WWW-Authenticate  -> Bearer realm="xxxxxx-xxxxx-xxxxx-xxxx", ...
 Save this UUID for further steps.
 
 ## Step 3: Get the auth code from Azure ACS.
-Construct the following url with the client ID generated in step 1, encoded properly.  Here, line breaks and indents have been added for readability.  But this is just one long string with query parameters:
+Construct the following url with the client ID generated in step 1, encoded properly.  Note: you can construct this URL more efficiently by entering the keys and corresponding values into Postman, or anyt other API client, as parameters. This will auto populate the url. 
+
+Here, line breaks and indents have been added for readability.  But this is just one long string with query parameters:
 
 https://cityofpittsburgh.sharepoint.com/_layouts/oauthauthorize.aspx?  
 >client_id={ Encoded client Id from step 1 }  
