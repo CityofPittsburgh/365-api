@@ -4,9 +4,6 @@ A refresh token is used to generate an access token.  An access token is require
 
 **A new refresh token must be generated every six months.**
 
-Last refresh: 11/10/2020  
-**Next refresh needed by 5/01/2021 (ten-day buffer to be safe)**
-
 If you're doing this for the first time, we recommend watching the video demo here: https://cityofpittsburgh.sharepoint.com/:f:/s/IandP/EjyKqHwaouFPjjrlJYwSJokBSMWjNKMKRpGhoiBJp4c1uQ?e=tUcOJb
 
 To complete this process, you must be set up as a Sharepoint administrator in 365, and must have admin access over each inidvidual SharePoint site as well (you can configure that from [this page](https://cityofpittsburgh-admin.sharepoint.com/_layouts/15/online/SiteCollections.aspx)). Consult Paul Scherrer or the service desk if you need to become a Sharepoint admin.
@@ -87,7 +84,7 @@ Fire off the POST request, and inspect the response body for the refresh token:
 }
 ```
 
-This token is good for 6 months.
+Copy the refresh token to a safe place. This token is good for 6 months.
 
 ## Step 5: Update environment variables on server, and in dev
 
