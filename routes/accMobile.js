@@ -74,7 +74,7 @@ router.get("/selectIncident", async (req, res) => {
       method: "get",
       headers: new Headers({
         Authorization: "Bearer " + (await refreshToken()),
-        Accept: "application/json"
+        Accept: "application/json;odata=verbose"
       })
     }
   )
