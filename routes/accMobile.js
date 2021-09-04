@@ -68,9 +68,9 @@ const analogIncidents = async url => {
 router.get("/selectIncident", async (req, res) => {
   fetch(
     "https://cityofpittsburgh.sharepoint.com/sites/PublicSafety/ACC/_api/web/lists/GetByTitle('Incidents')/items({AdvisoryID})",
-    #"https://cityofpittsburgh.sharepoint.com/sites/PublicSafety/ACC/_api/web/lists/GetByTitle('Incidents')/items?$filter=AdvisoryID eq '" +
-    #  req.query.AdvisoryID +
-    #  "'",
+    //"https://cityofpittsburgh.sharepoint.com/sites/PublicSafety/ACC/_api/web/lists/GetByTitle('Incidents')/items?$filter=AdvisoryID eq '" +
+    //  req.query.AdvisoryID +
+    //  "'",
     {
       method: "get",
       headers: new Headers({
